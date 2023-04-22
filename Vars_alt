@@ -2,6 +2,7 @@
 CREATE temp TABLE varslist (
  start_date (timestamp)
 ,end_date (timestamp)
+)
 ;
 
 -- assign values to variables
