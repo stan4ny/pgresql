@@ -1,0 +1,20 @@
+-- create variables to be used multiple times
+CREATE temp TABLE varslist (
+ start_date (timestamp)
+,end_date (timestamp)
+;
+
+-- assign values to variables
+INSERT INTO varslist values (
+ '1/1/2023'
+,'3/31/2023'
+)
+;
+
+-- use variables
+SELECT transactions
+FROM sales
+WHERE transaction_date
+ BETWEEN (SELECT srart_date FROM varslist)
+ AND (SELECT end_date FROM varslist)
+;
